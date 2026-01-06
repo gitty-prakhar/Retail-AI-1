@@ -1,3 +1,28 @@
+/* ===== FIX: ARROW & FIRST ICON OVERLAP ===== */
+
+/* Header height thodi badi */
+.sb-header{
+  height: 72px;
+}
+
+/* Arrow stays centered in header */
+#sidebar.collapsed .sb-header{
+  justify-content: center;
+}
+
+/* Nav icons thode neeche shift */
+#sidebar.collapsed #navLinks{
+  margin-top: 16px;
+}
+
+/* Extra safety: first nav item spacing */
+#sidebar.collapsed #navLinks a:first-child{
+  margin-top: 10px;
+}
+#sidebar.collapsed{
+  padding-top: 6px;
+}
+
 #sidebar {
   width: 256px;
   min-height: 146vh;

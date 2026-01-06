@@ -63,4 +63,3 @@ darkBtn.addEventListener("click",()=>{
 document.getElementById("darkToggle").addEventListener("click",()=>{
   setTimeout(()=>lucide.createIcons(),100);
 });
-
