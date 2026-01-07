@@ -1,8 +1,11 @@
+.layout {
+  display: flex;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   background: linear-gradient(135deg, #718ade, #f8fafc);
-  display: flex;
 }
 
 /* MAIN DASHBOARD */

@@ -3,47 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <title>RetailMind AI Dashboard</title>
+
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+
   <script src="https://unpkg.com/lucide@latest"></script>
   <script defer src="js/sidebar.js"></script>
-  <link rel="stylesheet" href="css/sidebar.css" />
-
-  <!-- DASHBOARD CSS -->
-  <link rel="stylesheet" href="css/dashboard.css" />
 </head>
+
 <body>
 
-  <!-- ================================================= -->
-  <!-- SIDEBAR : PASTE EXACT CONTENT OF sidebar.html HERE -->
-  <!-- ================================================= -->
-  <aside class="sidebar">
-    <!-- 🔴 PASTE SIDEBAR/components/sidebar.html CONTENT HERE 🔴 -->
-  </aside>
-  <!-- ================================================= -->
+<div class="layout">
+  <div id="sidebarContainer"></div>
 
   <!-- ================= MAIN DASHBOARD ================= -->
-  <main class="dashboard">
+  <main class="dashboard page active" style="display:block;">
 
     <!-- HERO -->
     <section class="hero">
-  <span class="badge">✨ AI-POWERED RETAIL INTELLIGENCE</span>
+      <span class="badge">✨ AI-POWERED RETAIL INTELLIGENCE</span>
 
-  <h1>Welcome to <span>Gumasto</span></h1>
+      <h1>Welcome to <span>Gumasto</span></h1>
 
-  <p style="font-weight: 600; margin-top: 12px;">
-    Your digital gumasta for Indian retail operations
-  </p>
+      <p style="font-weight: 600; margin-top: 12px;">
+        Your digital gumasta for Indian retail operations
+      </p>
 
-  <p style="font-style: italic; margin-top: 6px;">
-    “Ab andaza nahi, data ke saath dukaan chalao.”
-  </p>
+      <p style="font-style: italic; margin-top: 6px;">
+        “Ab andaza nahi, data ke saath dukaan chalao.”
+      </p>
 
-  <p style="margin-top: 14px;">
-    Gumasto is an AI-powered inventory intelligence platform built specifically
-    for Indian retailers. It helps reduce expiry losses, optimize discount timing,
-    and manage stock using real inventory and sales data.
-  </p>
-</section>
-
+      <p style="margin-top: 14px;">
+        Gumasto is an AI-powered inventory intelligence platform built specifically
+        for Indian retailers. It helps reduce expiry losses, optimize discount timing,
+        and manage stock using real inventory and sales data.
+      </p>
+    </section>
 
     <!-- FEATURES -->
     <section class="features">
@@ -63,12 +58,11 @@
       </div>
     </section>
 
-    <!-- ================= CSV UPLOAD (NEW) ================= -->
+    <!-- CSV UPLOAD -->
     <section class="upload-section">
       <h2 class="section-title">Upload Inventory Data</h2>
 
       <div class="upload-grid">
-
         <div class="upload-card">
           <label>Country</label>
           <select id="countrySelect">
@@ -79,7 +73,6 @@
           <select id="currencySelect" disabled>
             <option value="">Auto-selected</option>
           </select>
-
 
           <input type="file" id="csvFile" accept=".csv" hidden />
           <button id="uploadBtn" disabled>Upload CSV File</button>
@@ -98,7 +91,6 @@
           </ul>
           <p class="note">Max CSV file size: 500 MB</p>
         </div>
-
       </div>
     </section>
 
@@ -106,22 +98,10 @@
     <h2 class="section-title">Executive Overview</h2>
 
     <section class="stats">
-      <div class="stat-card">
-        <span>Inventory at Risk</span>
-        <h3>36</h3>
-      </div>
-      <div class="stat-card">
-        <span>Waste Reduced</span>
-        <h3>22%</h3>
-      </div>
-      <div class="stat-card">
-        <span>Revenue Saved</span>
-        <h3>₹1.4L</h3>
-      </div>
-      <div class="stat-card">
-        <span>Fast Moving Products</span>
-        <h3>18</h3>
-      </div>
+      <div class="stat-card"><span>Inventory at Risk</span><h3>36</h3></div>
+      <div class="stat-card"><span>Waste Reduced</span><h3>22%</h3></div>
+      <div class="stat-card"><span>Revenue Saved</span><h3>₹1.4L</h3></div>
+      <div class="stat-card"><span>Fast Moving Products</span><h3>18</h3></div>
     </section>
 
     <!-- AI HIGHLIGHTS -->
@@ -143,8 +123,19 @@
     </section>
 
   </main>
+</div>
 
-  <!-- DASHBOARD JS -->
-  <script src="js/dashboard.js"></script>
+<script>
+fetch("components/sidebar.html")
+.then(r=>r.text())
+.then(h=>{
+  document.getElementById("sidebarContainer").innerHTML = h;
+  loadSidebar();
+  lucide.createIcons();
+});
+</script>
+
+<script src="js/dashboard.js"></script>
+
 </body>
 </html>
