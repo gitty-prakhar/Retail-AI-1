@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RetailMind AI Dashboard</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="js/sidebar.js"></script>
+  <link rel="stylesheet" href="css/sidebar.css" />
+
+  <!-- DASHBOARD CSS -->
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- ================================================= -->
+  <!-- SIDEBAR : PASTE EXACT CONTENT OF sidebar.html HERE -->
+  <!-- ================================================= -->
+  <aside class="sidebar">
+    <!-- 🔴 PASTE SIDEBAR/components/sidebar.html CONTENT HERE 🔴 -->
+  </aside>
+  <!-- ================================================= -->
+
+  <!-- ================= MAIN DASHBOARD ================= -->
+  <main class="dashboard">
+
+    <!-- HERO -->
+    <section class="hero">
+  <span class="badge">✨ AI-POWERED RETAIL INTELLIGENCE</span>
+
+  <h1>Welcome to <span>Gumasto</span></h1>
+
+  <p style="font-weight: 600; margin-top: 12px;">
+    Your digital gumasta for Indian retail operations
+  </p>
+
+  <p style="font-style: italic; margin-top: 6px;">
+    “Ab andaza nahi, data ke saath dukaan chalao.”
+  </p>
+
+  <p style="margin-top: 14px;">
+    Gumasto is an AI-powered inventory intelligence platform built specifically
+    for Indian retailers. It helps reduce expiry losses, optimize discount timing,
+    and manage stock using real inventory and sales data.
+  </p>
+</section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="feature-card">
+        <h3>🧠 AI Intelligence Layer</h3>
+        <p>Continuously analyzes sales velocity, expiry risk, customer behavior, and trends.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🧪 Simulation First Approach</h3>
+        <p>All decisions are tested virtually using digital twins and heatmaps.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🌱 Sustainability by Design</h3>
+        <p>Waste reduction, donation-first logic, and responsible disposal.</p>
+      </div>
+    </section>
+
+    <!-- ================= CSV UPLOAD (NEW) ================= -->
+    <section class="upload-section">
+      <h2 class="section-title">Upload Inventory Data</h2>
+
+      <div class="upload-grid">
+
+        <div class="upload-card">
+          <label>Country</label>
+          <select id="countrySelect">
+            <option value="">Loading countries...</option>
+          </select>
+
+          <label>Currency</label>
+          <select id="currencySelect" disabled>
+            <option value="">Auto-selected</option>
+          </select>
+
+
+          <input type="file" id="csvFile" accept=".csv" hidden />
+          <button id="uploadBtn" disabled>Upload CSV File</button>
+        </div>
+
+        <div class="format-card">
+          <h4>CSV Format Required</h4>
+          <ul>
+            <li>Product_name</li>
+            <li>Brand</li>
+            <li>Category</li>
+            <li>Price</li>
+            <li>Stock</li>
+            <li>Units_sold</li>
+            <li>Expiry_date (YYYY-MM-DD)</li>
+          </ul>
+          <p class="note">Max CSV file size: 500 MB</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXECUTIVE OVERVIEW -->
+    <h2 class="section-title">Executive Overview</h2>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>Inventory at Risk</span>
+        <h3>36</h3>
+      </div>
+      <div class="stat-card">
+        <span>Waste Reduced</span>
+        <h3>22%</h3>
+      </div>
+      <div class="stat-card">
+        <span>Revenue Saved</span>
+        <h3>₹1.4L</h3>
+      </div>
+      <div class="stat-card">
+        <span>Fast Moving Products</span>
+        <h3>18</h3>
+      </div>
+    </section>
+
+    <!-- AI HIGHLIGHTS -->
+    <h2 class="section-title">Today’s AI Highlights</h2>
+
+    <section class="highlights">
+      <div class="highlight orange">
+        <h4>Expiry Risk Detected</h4>
+        <p>Milk, bread, and yogurt batches are entering critical expiry windows.</p>
+      </div>
+      <div class="highlight blue">
+        <h4>Demand Surge Incoming</h4>
+        <p>Dairy and beverage demand is projected to rise next week.</p>
+      </div>
+      <div class="highlight green">
+        <h4>Layout Opportunity</h4>
+        <p>31% increase in impulse purchases by moving snacks near checkout.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- DASHBOARD JS -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

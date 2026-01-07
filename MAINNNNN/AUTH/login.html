@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | Gumasto</title>
+  <link rel="stylesheet" href="../css/auth.css" />
+</head>
+<body>
+
+<div class="auth-container">
+
+  <!-- LEFT : LOGIN FORM -->
+  <div class="auth-form">
+    <h2>Log In</h2>
+    <p class="subtitle">Access your Gumasto dashboard</p>
+
+    <!-- Login Identifier -->
+    <div class="input-group">
+      <label>Email / Phone / Username</label>
+      <input type="text" id="loginIdentifier"
+             placeholder="Enter email, phone or username" />
+    </div>
+
+    <!-- Password -->
+    <div class="input-group password-wrapper">
+      <label>Password</label>
+      <input type="password" id="loginPassword"
+             placeholder="Enter password" />
+      <span onclick="togglePassword('loginPassword')">Show</span>
+    </div>
+
+    <!-- Forgot password -->
+    <div class="helper-row">
+      <a href="forgot-password.html">Forgot your password?</a>
+    </div>
+
+    <!-- Login button -->
+    <button class="primary" onclick="loginUser()">
+      Log In
+    </button>
+
+    <!-- Guest access -->
+    <button class="secondary" onclick="continueAsGuest()">
+      Continue without an account
+    </button>
+
+    <!-- Signup link -->
+    <div class="link">
+      Don’t have an account?
+      <a href="signup.html">Create one</a>
+    </div>
+  </div>
+
+  <!-- RIGHT : BRAND PANEL -->
+  <div class="brand-panel">
+    <h1>WELCOME to Gumasto</h1>
+    <p class="tagline">
+      Your digital gumasta for Indian retail operations
+    </p>
+    <p class="quote">
+      “Ab andaza nahi, data ke saath dukaan chalao.”
+    </p>
+  </div>
+
+</div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>

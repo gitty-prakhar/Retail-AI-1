@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(135deg, #718ade, #f8fafc);
+  display: flex;
+}
+
+/* MAIN DASHBOARD */
+.dashboard {
+  flex: 1;
+  padding: 32px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-radius: 28px;
+  padding: 48px;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.hero span {
+  color: #fde047;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.hero p {
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-size: 22px;
+  margin: 28px 0 16px;
+}
+
+/* CSV UPLOAD */
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.upload-card,
+.format-card {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.upload-card label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.upload-card select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.upload-card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.upload-card button:enabled {
+  opacity: 1;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+  font-size: 28px;
+  margin-top: 8px;
+}
+
+/* HIGHLIGHTS */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.highlight {
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.highlight.orange { background: #ffedd5; }
+.highlight.blue   { background: #dbeafe; }
+.highlight.green  { background: #dcfce7; }
+
+.note {
+  font-size: 13px;
+  color: #64748b;
+}
