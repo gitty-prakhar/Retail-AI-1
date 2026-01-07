@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Waste Management</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/waste.css">
   <link rel="stylesheet" href="css/sidebar.css">
+
+  <!-- Icons & Charts -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Sidebar JS -->
   <script defer src="js/sidebar.js"></script>
 </head>
+
 <body>
 
 <div class="layout">
-<div id="sidebarContainer"></div>
-  <!-- Main -->
+
+  <!-- Sidebar -->
+  <div id="sidebarContainer"></div>
+
+  <!-- Main Content -->
   <main class="main">
 
     <header>
@@ -21,30 +31,32 @@
       <p>Smart actions to minimize retail loss</p>
     </header>
 
-    <!-- Cards -->
+    <!-- Action Cards -->
     <section class="cards">
-      <div class="card dispose" onclick="openAction('dispose')">
+
+      <a href="wdispose.html" class="card dispose">
         <span>Dispose</span>
         <strong>1</strong>
-      </div>
+      </a>
 
-      <div class="card donate" onclick="openAction('donate')">
+      <a href="wdonate.html" class="card donate">
         <span>Donate</span>
         <strong>2</strong>
-      </div>
+      </a>
 
-      <div class="card discount" onclick="openAction('wdiscount')">
+      <a href="wdiscount.html" class="card discount">
         <span>Discount</span>
         <strong>1</strong>
-      </div>
+      </a>
 
-      <div class="card sale" onclick="openAction('sale')">
+      <a href="wsale.html" class="card sale">
         <span>Sale</span>
         <strong>1</strong>
-      </div>
+      </a>
+
     </section>
 
-    <!-- Graph -->
+    <!-- Chart -->
     <section class="chart-box">
       <h3>Waste Action Overview</h3>
       <canvas id="wasteChart"></canvas>
@@ -53,22 +65,19 @@
   </main>
 </div>
 
-<!-- ACTION SLIDE PANEL -->
-<div id="actionModal" class="action-modal">
-  <div class="action-panel">
-    <button class="close-btn" onclick="closeAction()">✕</button>
-    <iframe id="actionFrame"></iframe>
-  </div>
-</div>
-
+<!-- Sidebar Load -->
 <script>
   fetch("components/sidebar.html")
-.then(r=>r.text())
-.then(h=>{
- document.getElementById("sidebarContainer").innerHTML=h;
- loadSidebar();lucide.createIcons();
-});
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("sidebarContainer").innerHTML = html;
+      loadSidebar();
+      lucide.createIcons();
+    });
 </script>
- <script src="js/waste.js"></script>
+
+<!-- Waste Page JS -->
+<script src="js/waste.js"></script>
+
 </body>
 </html>

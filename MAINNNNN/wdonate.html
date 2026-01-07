@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate Items</title>
+
+  <!-- Core styles -->
+  <link rel="stylesheet" href="css/waste.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/waste-common.css">
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Sidebar -->
+  <script defer src="js/sidebar.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div id="sidebarContainer"></div>
+
+  <!-- Main -->
+  <main class="main">
+
+    <header>
+      <h1>Donate Items</h1>
+      <p>Products safe to be donated</p>
+    </header>
+
+    <!-- Items -->
+    <section class="cards">
+      <div class="card donate">
+        <span>Bread Packets</span>
+        <strong>30</strong>
+      </div>
+
+      <div class="card donate">
+        <span>Fruit Boxes</span>
+        <strong>12</strong>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section class="chart-box">
+      <h3>Donation Overview</h3>
+      <canvas id="barChart"></canvas>
+    </section>
+
+  </main>
+</div>
+
+<!-- Sidebar loader -->
+<script>
+  fetch("components/sidebar.html")
+    .then(r => r.text())
+    .then(h => {
+      document.getElementById("sidebarContainer").innerHTML = h;
+      loadSidebar();
+      lucide.createIcons();
+    });
+</script>
+
+<!-- Page config -->
+<script>
+  const DEFAULT_CATEGORY = "Donate";
+</script>
+<script src="js/waste-common.js"></script>
+
+</body>
+</html>

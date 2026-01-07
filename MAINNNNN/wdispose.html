@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dispose Items</title>
+
+  <!-- Core styles -->
+  <link rel="stylesheet" href="css/waste.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/waste-common.css">
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Sidebar -->
+  <script defer src="js/sidebar.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div id="sidebarContainer"></div>
+
+  <!-- Main -->
+  <main class="main">
+
+    <header>
+      <h1>Dispose Items</h1>
+      <p>Expired or unsafe products for disposal</p>
+    </header>
+
+    <!-- Items -->
+    <section class="cards">
+      <div class="card dispose">
+        <span>Expired Milk</span>
+        <strong>24</strong>
+      </div>
+
+      <div class="card dispose">
+        <span>Rotten Vegetables</span>
+        <strong>15</strong>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section class="chart-box">
+      <h3>Disposal Overview</h3>
+      <canvas id="barChart"></canvas>
+    </section>
+
+  </main>
+</div>
+
+<!-- Sidebar loader -->
+<script>
+  fetch("components/sidebar.html")
+    .then(r => r.text())
+    .then(h => {
+      document.getElementById("sidebarContainer").innerHTML = h;
+      loadSidebar();
+      lucide.createIcons();
+    });
+</script>
+
+<!-- Page config -->
+<script>
+  const DEFAULT_CATEGORY = "Dispose";
+</script>
+<script src="js/waste-common.js"></script>
+
+</body>
+</html>
