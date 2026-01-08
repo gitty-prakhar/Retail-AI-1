@@ -1,0 +1,335 @@
+:root{
+  --bg-main: linear-gradient(180deg,#fff7d6,#fff3c4);
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-soft: #e5e7eb;
+  --hero-grad: linear-gradient(135deg,#ff8a00,#ffd54f);
+  --table-head: #f1f5f9;
+}
+
+body.dark{
+  --bg-main: linear-gradient(180deg,#020617,#020617);
+  --card-bg: #0f172a;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+  --border-soft: #1e293b;
+  --hero-grad: linear-gradient(135deg,#1f2937,#020617);
+  --table-head: #020617;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: linear-gradient(135deg, #fff7ed, #fef3c7, #fef9c3);
+  height: 100%;
+  width: 100%;
+}
+
+.layout {
+  display: flex;
+}
+
+.page {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.top-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.hero {
+  border-radius: 24px;
+  padding: 48px;
+  color: white;
+  position: relative;
+  background: var(--hero-grad);
+  box-shadow: 0 12px 30px rgba(0,0,0,.3);
+  z-index: 1;
+}
+
+.hero-content { max-width:720px; }
+
+.blob {
+  position:absolute;
+  border-radius:50%;
+  filter:blur(60px);
+  pointer-events:none;
+  z-index:0;
+}
+
+.b1 { top:-120px; right:-120px; width:420px; height:420px; background:rgba(255,255,255,.25);}
+.b2 { bottom:-120px; left:-120px; width:480px; height:480px; background:rgba(251,146,60,.35);}
+
+body.dark .blob{opacity:.15;}
+
+.kpis{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin:30px 0;
+}
+
+.kpi{
+  background:var(--card-bg);
+  border:1px solid var(--border-soft);
+  border-radius:18px;
+  padding:22px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.04);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.kpi:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 50px rgba(0,0,0,.15);
+}
+
+.kpi span{color:var(--text-muted);}
+.kpi b{color:var(--text-main);}
+
+.control,
+.insight,
+.table-wrap{
+  background:var(--card-bg);
+  border:1px solid var(--border-soft);
+  border-radius:20px;
+  padding:28px;
+  color:var(--text-main);
+}
+
+table{
+  width:100%;
+  background:var(--card-bg);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+thead{
+  background:var(--table-head);
+  color:var(--text-main);
+}
+
+th,td{
+  padding:12px;
+  text-align:center;
+  border-bottom:1px solid var(--border-soft);
+  color:var(--text-main);
+}
+
+/* ===== DARK MODE FIXES ===== */
+
+body.dark tbody tr{ background:var(--card-bg); }
+
+body.dark tbody tr:hover{ background:#020617; }
+
+body.dark td,
+body.dark th{ color:var(--text-main); }
+
+body.dark .badge.red{ background:#3f1d1d;color:#fca5a5; }
+body.dark .badge.green{ background:#052e1a;color:#86efac; }
+body.dark .badge.orange{ background:#3a2208;color:#fdba74; }
+
+
+
+.pl-badge{
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.pl-badge.profit{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.pl-badge.loss{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.pl-badge.neutral{
+  background:#e5e7eb;
+  color:#374151;
+}
+
+/* Dark mode */
+body.dark .pl-badge.profit{
+  background:rgba(34,197,94,.25);
+  color:#bbf7d0;
+}
+body.dark .pl-badge.loss{
+  background:rgba(239,68,68,.25);
+  color:#fecaca;
+}
+body.dark .pl-badge.neutral{
+  background:rgba(148,163,184,.25);
+  color:#e5e7eb;
+}
+
+
+.table-wrap table{
+  background: var(--card-bg);
+  border:1px solid var(--border-soft);
+}
+
+thead{
+  background: var(--table-head);
+  color: var(--text-main);
+}
+
+tbody tr{
+  transition:.2s;
+}
+
+tbody tr:hover{
+  background: rgba(148,163,184,0.08);
+}
+
+body.dark tbody tr:hover{
+  background: rgba(148,163,184,0.12);
+}
+
+th,td{
+  color: var(--text-main);
+  border-bottom:1px solid var(--border-soft);
+}
+.pl-badge{
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+
+.pl-badge.profit{
+  background:#22c55e;
+  color:white;
+}
+
+.pl-badge.loss{
+  background:#ef4444;
+  color:white;
+}
+
+.pl-badge.neutral{
+  background:#64748b;
+  color:white;
+}
+
+/* Dark mode */
+body.dark .pl-badge.profit{background:#16a34a;}
+body.dark .pl-badge.loss{background:#dc2626;}
+body.dark .pl-badge.neutral{background:#475569;}
+
+
+
+/* ===== FULL ROW COLORING ===== */
+
+tr.row-loss td{
+  background: linear-gradient(90deg,#fee2e2,#fecaca);
+  color:#7f1d1d;
+  font-weight:600;
+}
+
+tr.row-profit td{
+  background: linear-gradient(90deg,#dcfce7,#bbf7d0);
+  color:#14532d;
+  font-weight:600;
+}
+
+/* DARK MODE */
+
+body.dark tr.row-loss td{
+  background: linear-gradient(90deg,#3f1d1d,#7f1d1d);
+  color:#fecaca;
+}
+
+body.dark tr.row-profit td{
+  background: linear-gradient(90deg,#052e1a,#14532d);
+  color:#bbf7d0;
+}
+
+/* Keep pill visible on row */
+tr.row-loss .pl-badge.loss{background:#b91c1c;}
+tr.row-profit .pl-badge.profit{background:#16a34a;}
+
+
+/* KPI BASE */
+.kpi{
+  position: relative;
+  overflow: hidden;
+}
+
+/* PRODUCTS DISCOUNTED */
+.kpi:nth-child(1){
+  background: linear-gradient(135deg,#ffedd5,#fed7aa);
+  border-color:#fdba74;
+}
+.kpi:nth-child(1) b{color:#9a3412;}
+body.dark .kpi:nth-child(1){
+  background: linear-gradient(135deg,#431407,#7c2d12);
+  border-color:#fb923c;
+}
+body.dark .kpi:nth-child(1) b{color:#fed7aa;}
+
+
+/* HIGH RISK ITEMS */
+.kpi:nth-child(2){
+  background: linear-gradient(135deg,#fee2e2,#fecaca);
+  border-color:#fca5a5;
+}
+.kpi:nth-child(2) b{color:#7f1d1d;}
+body.dark .kpi:nth-child(2){
+  background: linear-gradient(135deg,#450a0a,#7f1d1d);
+  border-color:#f87171;
+}
+body.dark .kpi:nth-child(2) b{color:#fecaca;}
+
+
+/* AVG DISCOUNT */
+.kpi:nth-child(3){
+  background: linear-gradient(135deg,#dbeafe,#bfdbfe);
+  border-color:#93c5fd;
+}
+.kpi:nth-child(3) b{color:#1e40af;}
+body.dark .kpi:nth-child(3){
+  background: linear-gradient(135deg,#0f172a,#1e3a8a);
+  border-color:#60a5fa;
+}
+body.dark .kpi:nth-child(3) b{color:#dbeafe;}
+
+
+/* WASTE REDUCTION IMPACT */
+.kpi:nth-child(4){
+  background: linear-gradient(135deg,#dcfce7,#bbf7d0);
+  border-color:#86efac;
+}
+.kpi:nth-child(4) b{color:#065f46;}
+body.dark .kpi:nth-child(4){
+  background: linear-gradient(135deg,#022c22,#064e3b);
+  border-color:#4ade80;
+}
+body.dark .kpi:nth-child(4) b{color:#bbf7d0;}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dispose Items</title>
+
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/wdispose.css">
+<link rel="stylesheet" href="css/waste.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script defer src="js/sidebar.js"></script>
+</head>
+<body>
+
+<div class="layout">
+  <div id="sidebarContainer"></div>
+
+  <main class="main action-page">
+
+    <!--Theme toggle-->
+    <button id="darkToggle" class="theme-btn">
+      <i data-lucide="moon"></i>
+    </button>
+        
+    <!-- Hero -->
+    <section class="dispose-hero">
+      <h1>Dispose Items Intelligence</h1>
+      <p>AI-powered insights to identify items nearing expiry for proper disposal.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="metric-row">
+      <div class="metric dispose-metric1">
+        <span>Total Items</span>
+        <strong>48</strong>
+      </div>
+      <div class="metric dispose-metric2">
+        <span>Urgent Dispose</span>
+        <strong>9</strong>
+      </div>
+      <div class="metric dispose-metric3">
+        <span>Safe Inventory</span>
+        <strong>31</strong>
+      </div>
+      <div class="metric dispose-metric4">
+        <span>Avg Shelf Life</span>
+        <strong>14 days</strong>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section class="dispose-chart-wrap large-chart">
+      <canvas id="disposeChart"></canvas>
+    </section>
+
+    <!-- Filter -->
+    <section class="filter-row">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Dairy">Dairy</option>
+        <option value="Bakery">Bakery</option>
+        <option value="Beverages">Beverages</option>
+        <option value="Grains">Grains</option>
+      </select>
+    </section>
+
+    <!-- Table -->
+    <section class="table-wrap">
+      <table class="cyber-table" id="disposeTable">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Days to Expiry</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-category="Dairy"><td>Milk</td><td>Dairy</td><td>2</td><td>24</td></tr>
+          <tr data-category="Bakery"><td>Bread</td><td>Bakery</td><td>5</td><td>18</td></tr>
+          <tr data-category="Beverages"><td>Fruit Juice</td><td>Beverages</td><td>7</td><td>30</td></tr>
+          <tr data-category="Grains"><td>Rice Pack</td><td>Grains</td><td>45</td><td>60</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Insights -->
+    <section class="insights">
+      <div class="insight-card dispose-insight1">
+        <h4>Disposal Priority</h4>
+        <p>Dairy & bakery items should be disposed within 48 hours.</p>
+      </div>
+      <div class="insight-card dispose-insight2">
+        <h4>Compliance Match</h4>
+        <p>Items are sorted for safe and compliant disposal.</p>
+      </div>
+      <div class="insight-card dispose-insight3">
+        <h4>Loss Prevention</h4>
+        <p>Estimated savings: <strong>₹42,000</strong></p>
+      </div>
+    </section>
+
+    <!-- Back -->
+    <div class="back-row">
+      <a href="waste.html" class="dispose-back-btn">← Back to Waste Management</a>
+    </div>
+
+  </main>
+</div>
+
+<script>
+fetch("components/sidebar.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("sidebarContainer").innerHTML = html;
+    loadSidebar();
+    lucide.createIcons();
+  });
+</script>
+
+<script src="js/wdispose.js"></script>
+</body>
+</html>

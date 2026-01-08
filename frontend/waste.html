@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waste Management</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/waste.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+
+  <!-- Icons & Charts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Sidebar JS -->
+  <script defer src="js/sidebar.js"></script>
+</head>
+
+<body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div id="sidebarContainer"></div>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!--Theme toggle-->
+    <button id="darkToggle" class="theme-btn">
+      <i data-lucide="moon"></i>
+    </button>
+
+    <!-- Hero Header -->
+    <header>
+      <h1>Waste Management</h1>
+      <p>Smart actions to minimize retail loss</p>
+    </header>
+
+    <!-- Action Cards -->
+    <section class="cards">
+
+      <a href="wdispose.html" class="card dispose">
+        <span>Dispose</span>
+        <strong>1</strong>
+      </a>
+
+      <a href="wdonate.html" class="card donate">
+        <span>Donate</span>
+        <strong>2</strong>
+      </a>
+
+      <a href="wdiscount.html" class="card discount">
+        <span>Discount</span>
+        <strong>1</strong>
+      </a>
+
+      <a href="wsale.html" class="card sale">
+        <span>Sale</span>
+        <strong>1</strong>
+      </a>
+
+    </section>
+
+    <!-- Info Line -->
+    <div class="card-info">
+      Click on the card to view insight regarding the required management of waste.
+    </div>
+
+    <!-- Chart Section -->
+    <section class="chart-box">
+      <h3>Waste Action Overview</h3>
+      <canvas id="wasteChart"></canvas>
+    </section>
+
+    <!-- AI Insights -->
+    <section class="ai-insights">
+      <div class="ai-card">
+        <h4>AI Prediction</h4>
+        <p>Dispose items flagged as expired to minimize loss.</p>
+      </div>
+      <div class="ai-card">
+        <h4>Optimal Donation</h4>
+        <p>Recommend nearby NGOs for surplus inventory.</p>
+      </div>
+      <div class="ai-card">
+        <h4>Sales Insights</h4>
+        <p>Highlight items eligible for discounts and sale.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Sidebar Load -->
+<script>
+  fetch("components/sidebar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("sidebarContainer").innerHTML = html;
+      loadSidebar();
+      lucide.createIcons();
+    });
+</script>
+
+<!-- Futuristic Waste Page JS -->
+<script src="js/waste.js"></script>
+
+</body>
+</html>

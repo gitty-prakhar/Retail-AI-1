@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gumasto</title>
+</head>
+<body>
+
+<script>
+  /*
+    Simple auth check using localStorage
+    (Later this can be replaced with real auth)
+  */
+
+  const isLoggedIn = localStorage.getItem("gumasto_logged_in");
+
+  // 🔒 strict check
+  if (isLoggedIn && isLoggedIn === "true") {
+    window.location.replace("dashboard.html");
+  } else {
+    window.location.replace("auth/login.html");
+  }
+</script>
+
+</body>
+</html>

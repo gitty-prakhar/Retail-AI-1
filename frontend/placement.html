@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Attention Heatmap</title>
+
+  <link rel="stylesheet" href="css/placement.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="js/sidebar.js"></script>
+</head>
+
+<body>
+<div class="layout">
+
+  <div id="sidebarContainer"></div>
+
+  <main class="main">
+
+    <button id="darkToggle" class="theme-btn">
+      <i data-lucide="moon"></i>
+    </button>
+
+    <header>
+      <h1>Placement of Various Categories</h1>
+      <p>AI-driven shelf placement visibility</p>
+    </header>
+
+    <select id="categorySelect">
+      <option value="">Select Category</option>
+      <option>Snacks</option>
+      <option>Beverages</option>
+      <option>Personal Care</option>
+    </select>
+
+    <!-- 3x3 GRID -->
+    <section class="grid">
+      <div class="cell" data-id="top-left">Top Left<span>--</span></div>
+      <div class="cell" data-id="top-mid">Top Center<span>--</span></div>
+      <div class="cell" data-id="top-right">Top Right<span>--</span></div>
+
+      <div class="cell" data-id="mid-left">Mid Left<span>--</span></div>
+      <div class="cell" data-id="mid-mid">Mid Center<span>--</span></div>
+      <div class="cell" data-id="mid-right">Mid Right<span>--</span></div>
+
+      <div class="cell" data-id="bot-left">Bottom Left<span>--</span></div>
+      <div class="cell" data-id="bot-mid">Bottom Center<span>--</span></div>
+      <div class="cell" data-id="bot-right">Bottom Right<span>--</span></div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section class="checkout">
+      <div class="cell checkout-cell" data-id="checkout">
+        Checkout Zone
+        <span>--</span>
+      </div>
+    </section>
+
+    <div class="ai-insight" id="insight">
+      Select a category to view AI insight.
+    </div>
+
+  </main>
+</div>
+
+<script>
+fetch("components/sidebar.html")
+  .then(r => r.text())
+  .then(h => {
+    sidebarContainer.innerHTML = h;
+    loadSidebar();
+    lucide.createIcons();
+  });
+</script>
+
+<script src="js/placement.js"></script>
+</body>
+</html>
