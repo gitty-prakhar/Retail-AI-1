@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demand Forecasting – RetailMind AI</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/trends.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Scripts -->
+  <script defer src="js/sidebar.js"></script>
+  <script defer src="js/trends.js"></script>
+</head>
+
+<body>
+  <div class="entire">
+    <div class="holder">
+  <!-- Sidebar -->
+  <div id="sidebarContainer"></div>
+
+  <!-- Main Page -->
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <!-- ACTIONS -->
+      <div class="header-actions">
+        <div class="forecast-toggle">
+          <button class="active" data-range="monthly">Monthly</button>
+          <button data-range="weekly">Weekly</button>
+        </div>
+
+        <button id="themeToggle" class="theme-btn">
+          <i data-lucide="moon"></i>
+        </button>
+      </div>
+
+      <div class="hero-content">
+        <div class="badge">✨ PREDICTIVE INTELLIGENCE</div>
+
+        <h1>
+          Demand Forecasting <br>
+          <span class="gradient-text">That Thinks Ahead</span>
+        </h1>
+
+        <p>
+          RetailMind AI analyzes historical demand and seasonal patterns
+          to forecast future sales — enabling confident stocking decisions
+          and eliminating guesswork.
+        </p>
+      </div>
+
+      <div class="glow glow-right"></div>
+      <div class="glow glow-left"></div>
+    </section>
+
+    <!-- KPIs -->
+    <section class="kpis">
+      <div class="kpi-card green">
+        <p class="label">Predicted Growth</p>
+        <p class="value">+18%</p>
+      </div>
+
+      <div class="kpi-card blue">
+        <p class="label">High Demand Category</p>
+        <p class="value">Dairy & Beverages</p>
+      </div>
+
+      <div class="kpi-card orange">
+        <p class="label">Underperforming SKUs</p>
+        <p class="value">7</p>
+      </div>
+    </section>
+
+    <!-- CHART -->
+    <section class="chart-section">
+      <div class="chart-card">
+        <div class="chart-header">
+          📊 <h2>Demand Forecast</h2>
+        </div>
+
+        <div class="chart-wrapper">
+          <canvas id="demandChart"></canvas>
+        </div>
+
+        <div class="insight-chip">
+          🤖 AI Insight: Demand peaks during April–May. Pre-stocking dairy
+          and beverages can significantly boost revenue.
+        </div>
+      </div>
+    </section>
+       
+  </main>
+   </div>
+    <!-- FOOTER -->
+<footer class="app-footer">
+  <div class="footer-inner">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <div class="brand-row">
+        <img src="assets/fullicon.png" alt="Gumasto Logo" />
+        <h2>Gumasto</h2>
+      </div>
+
+      <p>
+        Your AI-powered retail intelligence platform to reduce waste,
+        optimize inventory and increase profit margins.
+      </p>
+
+      <div class="footer-socials">
+        <a href="#"><i data-lucide="facebook"></i></a>
+        <a href="https://x.com/Gumasto_Vyom" target="_blank"><i data-lucide="twitter"></i></a>
+        <a href="#"><i data-lucide="instagram"></i></a>
+        <a href="#"><i data-lucide="linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./inventory.html">Inventory</a>
+      <a href="./discount.html">Discounts</a>
+      <a href="./trends.html">Trends</a>
+      <a href="./waste.html">Waste Management</a>
+      <a href="./placement.html">Placement</a>
+      <a href="./comparison.html">Comparision</a>
+      <a href="./about.html">About Us</a>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="footer-col">
+      <h4>Features</h4>
+      <a href="#">AI Forecasting</a>
+      <a href="#">Dynamic Pricing</a>
+      <a href="#">Waste Reduction</a>
+      <a href="#">Smart Analytics</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p><i data-lucide="map-pin"></i> Lucknow, India</p>
+      <p><i data-lucide="mail"></i> support@gumasto.ai</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>Built for Microsoft Imagine Cup</span>
+    <span>©️ 2026 Gumasto</span>
+  </div>
+</footer>
+
+  </div>
+  
+  <!-- Sidebar loader -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("components/sidebar.html")
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById("sidebarContainer").innerHTML = html;
+          loadSidebar();
+          lucide.createIcons();
+          document.body.classList.add("sidebar-loaded");
+        });
+    });
+  </script>
+  
+<script>
+  lucide.createIcons();
+</script>
+
+  
+
+</body>
+</html>

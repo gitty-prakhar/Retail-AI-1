@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Attention Heatmap</title>
+
+  <link rel="stylesheet" href="css/placement.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="js/sidebar.js"></script>
+</head>
+
+<body>
+<div class="layout">
+
+  <div id="sidebarContainer"></div>
+
+  <main class="main">
+
+    <button id="darkToggle" class="theme-btn">
+      <i data-lucide="moon"></i>
+    </button>
+
+    <header>
+      <h1>Placement of Various Categories</h1>
+      <p style="font-weight: 600; margin-top: 12px;">
+        AI-driven shelf placement visibility
+      </p>
+
+      <p style="margin-top: 14px;">
+        Improve in-store efficiency by placing products where they perform best, 
+        increasing conversion rates and reducing slow-moving inventory.
+      </p>
+    </header>
+
+    <select id="categorySelect">
+      <option value="">Select Category</option>
+      <option>Dairy</option>
+      <option>Bakery</option>
+      <option>Snacks</option>
+      <option>Beverages</option>
+      <option>Electronics</option>
+      <option>Baby Products</option>
+      <option>Toys</option>
+    </select>
+
+    <!-- 3x3 GRID -->
+    <section class="grid">
+      <div class="cell" data-id="top-left">Top Left<span>--</span></div>
+      <div class="cell" data-id="top-mid">Top Center<span>--</span></div>
+      <div class="cell" data-id="top-right">Top Right<span>--</span></div>
+
+      <div class="cell" data-id="mid-left">Mid Left<span>--</span></div>
+      <div class="cell" data-id="mid-mid">Mid Center<span>--</span></div>
+      <div class="cell" data-id="mid-right">Mid Right<span>--</span></div>
+
+      <div class="cell" data-id="bot-left">Bottom Left<span>--</span></div>
+      <div class="cell" data-id="bot-mid">Bottom Center<span>--</span></div>
+      <div class="cell" data-id="bot-right">Bottom Right<span>--</span></div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section class="checkout">
+      <div class="cell checkout-cell" data-id="checkout">
+        Checkout Zone
+        <span>--</span>
+      </div>
+    </section>
+
+    <div class="ai-insight" id="insight">
+      Select a category to view AI insight.
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER MUST BE OUTSIDE .layout -->
+<div id="footerContainer" style="width: 90%;"></div>
+
+
+<script>
+fetch("components/sidebar.html")
+  .then(r => r.text())
+  .then(h => {
+    sidebarContainer.innerHTML = h;
+    loadSidebar();
+    lucide.createIcons();
+  });
+
+
+
+fetch("components/footer.html")
+  .then(r=>r.text())
+  .then(h=>{
+    document.getElementById("footerContainer").innerHTML=h;
+  });
+</script>
+
+<script src="js/placement.js"></script>
+</body>
+</html>
